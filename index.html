@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Calculator</title>
+  </head>
+  <body>
+    <h1>সহজ ক্যালকুলেটর</h1>
+    
+
+
+
+</div>
+    
+   <input type="text"
+    id="display"
+    style="width:245px;height:45px;backgroud-color:red;font-size:30px;text-align:center;margin-left:74px;">
+     
+    
+
+  
+    
+
+<div   style="background-color:red;padding:20px;border-radius:20px;box-shadow:0 8px 15px #555;
+  display:flex;flex-wrap:wrap; width:255px;gap:5px;margin:auto;">
+
+<button onclick="number('7')" style="flex:0 0 60px;font-size:20px;">7</button>
+<button onclick="number('8')" style="flex:0 0 60px;font-size:20px;">8</button>
+<button onclick="number('9')" style="flex:0 0 60px;font-size:20px;">9</button>
+<button onclick="operator('+')" style="flex:0 0 60px;font-size:20px;">+</button>
+
+<button onclick="number('4')" style="flex:0 0 60px;font-size:20px;">4</button>
+<button onclick="number('5')" style="flex:0 0 60px;font-size:20px;">5</button>
+<button onclick="number('6')" style="flex:0 0 60px;font-size:20px;">6</button>
+<button onclick="operator('-')" style="flex:0 0 60px;font-size:20px;">-</button>
+<button onclick="number('1')" style="flex:0 0 60px;font-size:20px;">1</button>
+<button onclick="number('2')" style="flex:0 0 60px;font-size:20px;">2</button>
+<button onclick="number('3')" style="flex:0 0 60px;font-size:20px;">3</button>
+<button onclick="operator('×')" style="flex:0 0 60px;font-size:20px;">*</button> 
+<button onclick="number('0')" style="flex:0 0 60px;font-size:20px;">0</button>
+<button onclick="clearDisplay()" style="flex:0 0 60px;font-size:20px;">C</button>
+<button onclick="calculate()" style="flex:0 0 60px;font-size:20px;">=</button>
+<button onclick="operator('÷')" style="flex:0 0 60px;font-size:20px;">/</button>
+</div>
+  
+  
+
+<script>
+function number(value) {
+    document.getElementById("display").value += value;
+}
+    function operator(value) {
+    document.getElementById("display").value += value;
+    } 
+  function clearDisplay() {
+    document.getElementById("display").value="";
+  }
+  function calculate() {
+    let x = document.getElementById("display").value;
+
+    x = x.replace(/×/g, "*");
+    x = x.replace(/÷/g, "/");
+
+    document.getElementById("display").value = eval(x);
+}
+</script>
+  </body>
+</html>
